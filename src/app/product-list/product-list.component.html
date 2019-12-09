@@ -1,11 +1,23 @@
 <h2>Products</h2>
 
+<!-- this repeats -->
 <div *ngFor="let product of products">
 
   <!-- insert content here -->
   <h3>
-    {{product.name}}
+    <a [title]="product.name + ' detailzzz'">
+      {{product.name}}
+    </a>
   </h3>
+
+  <div *ngFor="let productproperty of product | keyvalue">
+    {{productproperty.key}} => {{productproperty.value}}
+  </div>
+
+  <p *ngIf="product.description">
+    Description: {{product.description}}
+  </p>
+
 
 </div>
 
