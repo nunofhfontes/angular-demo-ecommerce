@@ -10,14 +10,21 @@
     </a>
   </h3>
 
-  <div *ngFor="let productproperty of product | keyvalue">
-    {{productproperty.key}} => {{productproperty.value}}
-  </div>
-
-  <p *ngIf="product.description">
+  <p *ngIf="product.description; else elseBlock">
     Description: {{product.description}}
   </p>
+  <ng-template #elseBlock>No description available <br/><br/></ng-template>
+  
 
+  <button (click)="share()">
+    Share
+  </button>
 
 </div>
+
+
+
+<!-- <div *ngFor="let productproperty of product | keyvalue">
+  {{productproperty.key}} => {{productproperty.value}}
+</div> -->
 
