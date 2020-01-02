@@ -31,6 +31,8 @@ export class CartComponent implements OnInit {
     // Process checkout data here
     console.warn('Your order has been submitted', customerData);
 
+
+    //this is a reactive form, thats why the lines below
     this.items = this.cartService.clearCart();
     this.checkoutForm.reset();
   }
